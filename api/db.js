@@ -2,11 +2,11 @@ import { Sequelize, DataTypes } from "sequelize";
 
 export const sequelize = new Sequelize(
     'vgshop',
-    'root',
+    'postgres',
     'minh0123',
     {
         host: 'localhost',
-        dialect: 'mysql',
+        dialect: 'postgres',
         define: {
             timestamps: false
         }
