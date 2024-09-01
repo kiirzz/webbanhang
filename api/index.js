@@ -1,4 +1,5 @@
 import express from "express";
+import dotenv from 'dotenv';
 import authRoutes from "./routes/auth.js"
 import gameRoutes from "./routes/games.js"
 import orderRoutes from "./routes/orders.js"
@@ -9,6 +10,8 @@ import cartItemRoutes from "./routes/cart.js"
 import cookieParser from "cookie-parser";
 
 const app = express()
+
+dotenv.config();
 
 app.use(express.json())
 app.use(cookieParser())
@@ -21,6 +24,6 @@ app.use("/api/publisher", publisherRoutes)
 app.use("/api/category", categoryRoutes)
 app.use("/api/cart", cartItemRoutes)
 
-app.listen(8800, () => {
+app.listen(process.env.PORT, () => {
     console.log("Connected!")
 })
