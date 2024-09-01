@@ -180,7 +180,7 @@ export const Cart = sequelize.define("cart", {
     user_id: {
         type: DataTypes.STRING,
         references: {
-            model: "user",
+            model: "users",
             key: "user_id",
         },
         allowNull: false

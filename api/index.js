@@ -1,13 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { createServer } from '@vercel/node';
-import authRoutes from '../routes/auth.js';
-import gameRoutes from '../routes/games.js';
-import orderRoutes from '../routes/orders.js';
-import userRoutes from '../routes/users.js';
-import publisherRoutes from '../routes/publishers.js';
-import categoryRoutes from '../routes/category.js';
-import cartItemRoutes from '../routes/cart.js';
+import authRoutes from '../api/routes/auth.js';
+import gameRoutes from '../api/routes/games.js';
+import orderRoutes from '../api/routes/orders.js';
+import userRoutes from '../api/routes/users.js';
+import publisherRoutes from '../api/routes/publishers.js';
+import categoryRoutes from '../api/routes/category.js';
+import cartItemRoutes from '../api/routes/cart.js';
 import cookieParser from 'cookie-parser';
 
 dotenv.config();
@@ -29,4 +28,4 @@ app.use('/', (req, res) => {
   res.send('Server is running!');
 });
 
-export default createServer(app);
+export default app;
