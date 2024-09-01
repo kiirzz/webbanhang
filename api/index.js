@@ -24,8 +24,8 @@ app.use("/api/publisher", publisherRoutes)
 app.use("/api/category", categoryRoutes)
 app.use("/api/cart", cartItemRoutes)
 
-app.use("/", () => {
-    "Server is running!"
+app.use("/", (req, res) => {
+    res.send('Server is running!');
 })
 
 app.listen(process.env.PORT, () => {
