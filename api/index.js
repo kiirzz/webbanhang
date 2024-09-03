@@ -1,5 +1,4 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import authRoutes from '../api/routes/auth.js';
 import gameRoutes from '../api/routes/games.js';
 import orderRoutes from '../api/routes/orders.js';
@@ -8,8 +7,6 @@ import publisherRoutes from '../api/routes/publishers.js';
 import categoryRoutes from '../api/routes/category.js';
 import cartItemRoutes from '../api/routes/cart.js';
 import cookieParser from 'cookie-parser';
-
-dotenv.config();
 
 const app = express();
 
@@ -28,9 +25,7 @@ app.use('/', (req, res) => {
   res.send('Server is running!');
 });
 
-const PORT = process.env.PORT || 8800;
-
-app.listen(PORT, () => {
+app.listen(8800, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 

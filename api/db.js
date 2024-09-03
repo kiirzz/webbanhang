@@ -1,23 +1,17 @@
 import { Sequelize, DataTypes } from "sequelize";
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-export const sequelize = new Sequelize(process.env.POSTGRES_URL, {
-    dialect: 'postgres',
-    logging: false,
-
-    // 'vgshop',
-    // 'postgres',
-    // 'minh0123',
-    // {
-    //     host: 'localhost',
-    //     dialect: 'postgres',
-    //     define: {
-    //         timestamps: false
-    //     }
-    // }
-});
+export const sequelize = new Sequelize(
+    'vgshop',
+    'root',
+    'minh0123',
+    {
+        host: 'localhost',
+        dialect: 'mysql',
+        define: {
+            timestamps: false
+        }
+    }
+);
 
   // --------------------------User-----------------------------------------
 
